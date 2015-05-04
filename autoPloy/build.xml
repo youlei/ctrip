@@ -1,0 +1,14 @@
+<project name='autoPloy' default='hello'>
+	<target name='hello'>
+		<echo>hello world!</echo>
+	</target>
+	<target name='goodbye' depends='hello'>
+		<echo> goodbye!!</echo>
+	</target>
+	<property name='version' value='1.0.1'/>
+	<loadproperties srcfile="build.properties"/>
+	<target name='version1'>
+		<echo>Version is ${version} copyright is ${copyright}</echo>
+	</target>
+	<fileset dir='./src' includes='**/*.js'/>
+</project>

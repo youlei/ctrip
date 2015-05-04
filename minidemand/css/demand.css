@@ -1,0 +1,481 @@
+@charset "utf-8";
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, em, button { margin:0; padding:0; }
+html { background-color:#FFF; }
+body { background-color:#FFF; font-size:12px; line-height:1.5; font-family:Tahoma,Simsun,sans-serif; color:#333; }
+img, fieldset { margin:0; padding:0; border:0; }
+input, textarea {font-size:12px;}
+table { border-collapse:collapse; }
+a { color:#0065bb; text-decoration:none; outline:none; }
+a:hover { text-decoration:underline; }
+h1, h2, h3, h4, h5 { font-family:Arial,Simsun,sans-serif; }
+ul li, ol li { list-style:none; }
+dfn { font-style:normal; font-size:12px; font-family:Arial !important; }
+select { padding:1px; font-family:Arial,Simsun,sans-serif; border:1px solid #CCC; background-color:#FFF; }
+input[type="text"],input[type="number"] { padding:3px; border:solid 1px #CCC; box-shadow: 1px 1px 3px #DDDDDD inset; }
+input[type="text"]:focus,input[type="number"]:focus{ background-color:#f1f9ff; border-color:#5d9de5 #67a1e2 #67a1e2 #5d9de5; border-style:solid; border-width:1px;box-shadow: 1px 1px 3px #d0dee6 inset;}
+.basefix,.layoutfix { *zoom:1; }
+.basefix:after,.layoutfix:after { clear:both; content:'.'; display:block; height:0; overflow:hidden; }
+.noborder {border: 0 none !important; }
+.f-black {color: #333; }
+.f-brown {color: #B88649; }
+.txtoverflow {overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* = head = */
+.city_wrap {float: left; }
+.start_city_station dt i, .start_city_station dt b, .search_wrap .main_search_btn i{background-image:url(http://pic.c-ctrip.com/vacation_v2/sce_htl/un_sce_htl.png?20140405.png);background-repeat: no-repeat;}
+.start_city_station { float: left; position: relative; z-index:21;}
+.start_city_station dt { position: relative;height: 38px;border: 1px solid #D6D6D6;font: 16px/38px "microsoft yahei",simsun,sans-serif;color: #06C;width: 90px;cursor: pointer;padding:0 34px 0 50px;background: #FAFAFA;z-index: 22; float:left;}
+.start_city_station dt {
+	background: -moz-linear-gradient(#fff,#F5F5F5);
+	background: -webkit-linear-gradient(#fff,#F5F5F5);
+	background: -o-linear-gradient(#fff,#F5F5F5);
+	background: -ms-linear-gradient(#fff,#F5F5F5);
+	background: linear-gradient(#fff,#F5F5F5);
+}
+.start_city_station dt span { color: #666;font-size: 12px;padding-left: 4px; }
+.start_city_station dd { position: absolute;background-color: #fff;border: 1px solid #D6D6D6;border-top:none;padding: 14px;width: 320px;top:39px; left:0;z-index:23; margin-top:1px}
+.start_city_station .hot_station { border-bottom: 1px solid #EAEAEA;padding-bottom: 8px; }
+.start_city_station .hot_station h4 { font-weight: normal;color: #999;font-size: 12px;line-height: 20px; }
+.start_city_station .hot_station a { display: inline-block;line-height: 20px;margin-right: 8px;color: #666; }
+.start_city_station dt i {position: absolute;width: 14px;height: 17px;background-position: -57px -130px;left: 21px;top: 11px;overflow: hidden;}
+.start_city_station dt b {position: absolute;width: 8px;height: 5px;background-position:-98px -135px;top: 17px;right: 10px;overflow: hidden;}
+.start_city_station dt.on b { background-position:-81px -135px; }
+.start_city_station dt.on span b { background-position: -201px -132px; width: 8px;height: 8px;}
+.start_city_station dt.flt_htl_btn {height:38px; border-width: 1px 1px 1px 0; padding: 0 37px 0 36px; width:100px;}
+.start_city_station dt.flt_htl_btn span {color:#0066CC;}
+.start_city_station dt.on {border-bottom: 0 none; z-index:22; padding-bottom:1px;}
+.start_city_station dt.on, .start_city_station dt:hover { background: #fff; }
+.flt_htl_btn span { display: inline-block;height: 38px; padding-right:6px; line-height: 38px;overflow: hidden;border-bottom: 1px solid transparent;_border-bottom: none;cursor: pointer; font-family: Tahoma,Simsun,sans-serif;}
+.start_city_station dt.flt_htl_btn i { float: left;width: 44px;height: 16px;background-position:-117px -152px;margin-right: 6px; position: static;margin-top: 11px;}
+
+.start_city_station .station_list li { padding-top: 8px; }
+.start_city_station .station_list span { width: 16px;height: 16px;text-align: center;line-height: 16px;background-color: #DB9454;color: #fff;display: inline-block;margin-right: 16px; }
+.start_city_station .station_list a { display: inline-block;margin-right: 8px;color: #666; }
+
+.start_city_station dd.flt_htl_searchBox {width:300px; padding: 20px 24px;}
+
+/* = layout = */
+html, body, .cui_hd, .cui_nav {min-width: 980px; }
+.cui_hd_cont{ position: relative; z-index: 27;} /* 覆盖问题 */
+#cui_nav{ position: relative; z-index: 26;}
+.cui_hd, .cui_nav {_width:980px; }
+.base_nav {margin-bottom: 42px; }
+.base_hd {position: relative; z-index: 25; width: 1180px; _width:980px; margin: 0 auto; padding: 20px 0 15px; transition: width .5s ease; }
+.base_bd {min-width: 980px; padding: 24px 0 30px; background-color: #EDEDED; transition: width .5s ease; }
+.base_bd .main {width: 1180px; _width:980px; margin: 0 auto; transition: width .5s ease; }
+.base_ft {min-width: 980px; padding: 40px 0 25px; }
+.base_ft .mc_footer {width: 1180px; _width:980px; margin: 0 auto; transition: width .5s ease; }
+.banner_wrap {position: relative; }
+.hot_deals {margin-bottom: 25px; }
+.mc_prod {overflow: hidden; margin-bottom: 30px; }
+
+/* = base_hd  = */
+.base_hd h1 {float: left; font: 400 28px/40px "Microsoft Yahei"; color: #CE9550; }
+.base_hd .city_wrap {margin: 0 0 0 18px; }
+.base_hd .ad {position: absolute; right: 0; top: 5px; width: 539px; _width:410px; height: 70px; background: url(http://pic.c-ctrip.com/vacation_v2/mice_v2/ad_s20150204.png) no-repeat right 0; transition: width .5s ease; }
+.base_hd .ad2 {position: absolute; right: 0; top: 30px; width: 456px; height: 24px; background: url(http://pic.c-ctrip.com/vacation_v2/mice_v2/ad_s2.png) no-repeat; }
+.base_hd .mice_logo {margin: 7px 10px 0 0; vertical-align: top; }
+
+/* = banner = */
+.banner_wrap {position: relative; z-index: 24; min-width: 980px; width: 100%; overflow: hidden; }
+.banner_wrap .banner_tab {position: absolute; top: 510px; right: 10px; padding: 10px; }
+.banner {width: 9999em; overflow: hidden; }
+.banner li {float: left; height: 552px; }
+.banner_ad{position: relative; z-index:0; height:490px;overflow: hidden; background:url(http://pic.c-ctrip.com/vacation_v2/sce_htl/banner_loop_bg.png?20140404.png) no-repeat center center #eee; max-width:1668px; margin:0 auto}
+
+/* = 切换小圆点 = */
+.banner_tab {}
+.banner_tab a {float: left; width: 12px; height: 12px; border-radius: 50%; margin: 0 8px; background-color: #fff; overflow: hidden; }
+.banner_tab a:hover, .banner_tab .cur {background-color: #B98748; }
+
+/* = 搜索框 = */
+.mc_search_expand {}
+.mc_search_expand .mc_search {height: 437px; }
+.mc_search_expand .mc_search_add {height: 380px; margin-left: 400px; opacity: 1; *display:block;;}
+.mc_search_wrap {position: relative; width: 1180px; _width:980px; margin: 0 auto; z-index: 1;}
+.mc_search {position:absolute; top: 20px; z-index: 2; float: left; width: 360px; height: 390px; color: #fff; padding: 20px; background: url(http://pic.c-ctrip.com/vacation_v2/mice_v2/transparent2.png) repeat; transition: height .5s ease; }
+.mc_search h2, .prod_side h3 {font: 700 20px/2 "Microsoft Yahei"; }
+.mc_search h2 {font-size: 22px; margin-bottom: 13px; }
+.mc_search p {font-size: 0; margin-bottom: 18px; }
+.mc_search p b {display:inline-block; *zoom: 1; width: 70px; font: 400 18px/38px "Microsoft Yahei"; vertical-align: top; }
+.mc_search p .ex {display: inline-block; *zoom: 1; width: 35px; height: 38px; font: 18px/38px "Microsoft Yahei"; text-align: center; vertical-align: top; }
+.mc_search input {width: 274px; _width: 277px; height: 30px; font: 16px/30px "Microsoft Yahei"; color: #777; border: 1px solid #C9CAC6; padding-left: 10px; background-color: #ECEDE9; }
+
+.mc_search .warn {font-size: 12px; margin: -13px 0 5px 70px; }
+.mc_search .sch_dotted {padding-top: 20px; margin-top: 20px; border-top: 1px dotted #C9CAC6; }
+.mc_search .input_s {width: 112px; _width:115px; }
+.mc_search .mc_btn1 {width: 290px; margin-left: 70px; }
+.mc_search .amore {color: #fff; font: 14px/38px "Microsoft Yahei"; margin-left: 70px; }
+.mc_search .amore_checked {color: #CD944F; text-decoration: underline; }
+.mc_search .f-black input {color: #333; }
+
+.mc_search_add {z-index: 1; width: 500px; height: 380px; padding: 77px 20px 20px; _padding-bottom: 0; transition: margin .5s ease,opacity .5s ease; opacity: 0; *display:none; }
+.mc_search_add p b {width: 85px; }
+.mc_search_add textarea {width: 380px; height: 73px; font: 16px/1.5 "Microsoft Yahei"; color: #777; border: 1px solid #B1B1AF; padding: 10px; background-color: #ECEDE8; overflow-y: scroll; resize: none; box-shadow: 1px 1px 3px #bbb inset; }
+.mc_search_add .mc_btn1 {margin-left: 85px; }
+
+/* = 选择框组件 = */
+.mc_select {position:relative; display: inline-block; *zoom: 1; }
+.mc_select .i_arr {position: absolute; right: 10px; top: 18px; cursor: pointer; }
+.mc_select .i_arr_up {position: absolute; right: 10px; top: 12px; cursor: pointer; }
+
+/* = 提示栏 = */
+.warn {line-height: 25px; font-size: 12px; color: #99979A; padding: 0 5px 0 23px; border: 1px solid #D6C198; margin: 5px 0; background-color: #FEFCD9; }
+.warn .imc_info {float: left; margin: 7px 0 0 -17px; }
+
+/* = base_bd = */
+
+/* = 热门推荐 = */
+/* - 热门图片 - */
+.hot_deals .img_lbl_box {float: left; width: 829px; _width:630px; overflow: hidden; border: 2px solid #CC954E; transition: width .5s ease; }
+.hot_deals .img_lbl_box img {display: block; }
+.hot_deals .hot_box {float: right; width: 280px; }
+/* - 热门列表 - */
+.hot_box {height: 278px; padding: 10px 20px; border: 1px solid #E6E6E6; background-color: #fff; }
+.hot_box h2 {color: #CD944D; font: 400 22px/2 "Microsoft Yahei"; }
+.hot_box h2 span {font-size: .8em; padding-left: 10px; }
+.hot_tab {cursor: pointer; overflow: hidden; padding-top: 1px; padding-left: 1px;
+	background: url(http://pic.c-ctrip.com/vacation_v2/mice_v2/mc_icon.png) no-repeat 0 0; }
+.hot_tab li {float: left; width: 25%; _width:24.5%; height: 40px; text-align: center; font: 14px/40px "Microsoft Yahei";
+	background-color: #ECEDE9; }
+.hot_tab li:hover {color: #a77534; }
+.hot_tab .cur {color: #AB6811; *margin-right: -1px; background-color: #fff; }
+.hot_list_wrap {background: url(http://pic.c-ctrip.com/vacation_v2/mice_v2/mc_icon.png) no-repeat 0 -40px; }
+.hot_list {margin-left: 1px; background-color: #fff; }
+.hot_list li {position: relative; *zoom: 1; height: 54px; line-height: 24px; padding-top: 5px; padding-left: 25px; margin: 0 10px; border-bottom: 1px dotted #C9CAC6; background-color: #fff; overflow: hidden; }
+.hot_list li a {color: #333; }
+.hot_list .r {position: absolute; right: 0; top: 30px; color: #0052a5; font-family: "Microsoft Yahei"; padding-left: 3px; background-color: #fff; }
+.hot_list .r em {font-style: normal; color: #e00; }
+.hot_list li .imc_hotnum {float: left; font: 700 12px/1.5 "Arial"; color: #fff; text-align: center; margin: 5px 0 0 -25px; }
+
+/* = img label 图片右上角标签 = */
+.img_lbl_box {position: relative; }
+.img_lbl_box .label {position: absolute; top: 0; right: 0; _right: -1px; z-index: 22; width: 58px; height: 58px;
+	line-height: 58px; text-align: center; font-size: 14px; color: #fff; font-weight: 700;
+	background-color: #CB944D; }
+.img_lbl_box .green {background-color: #4BB889; }
+.img_lbl_box .red {background-color: #EF4273; }
+.img_lbl_box .yellow {background-color: #FDA11D; }
+.img_lbl_box .pink {background-color: #F7654D; }
+
+/* = 产品列表 = */
+.mc_prod {background-position: left bottom; background-repeat: no-repeat; }
+.mc_prod .side_bg1 {background: url(http://pic.c-ctrip.com/vacation_v2/mice_v2/side_bg.png) repeat-x; _background: #FF5640; }
+.mc_prod .side_bg2 {background: url(http://pic.c-ctrip.com/vacation_v2/mice_v2/side_bg.png) repeat-x 0 -500px; _background: #005EBD; }
+.mc_prod .side_bg3 {background: url(http://pic.c-ctrip.com/vacation_v2/mice_v2/side_bg.png) repeat-x 0 -1000px; _background: #7318BD; }
+.mc_prod .side_bg4 {background: url(http://pic.c-ctrip.com/vacation_v2/mice_v2/side_bg.png) repeat-x 0 -1500px; _background: #DE9648; }
+
+/* = 产品侧边栏 = */
+.prod_side {float: left; width: 210px; height: 470px; color: #fff; font: 14px/20px "Microsoft Yahei"; padding: 15px; overflow: hidden; }
+.prod_side h3 {}
+.prod_side h3 span, .mc_search h2 span {font-weight: 400; font-size: .8em; padding-left: 10px; }
+.prod_side dl {overflow: hidden; border-bottom: 1px dotted #EE9990; padding: 18px 0; *zoom: 1; }
+.prod_side dt {font-size: 1.2em; margin-bottom: 10px; }
+.prod_side dd {float: left; margin: 0 10px 5px 0; }
+.prod_side a {display: inline-block; *zoom: 1; color: #fff; white-space: nowrap; padding-bottom: 2px; }
+.prod_side a:hover {text-decoration: none; padding-bottom: 0; border-bottom: 2px solid #fff; }
+.prod_side_info strong {display: block; line-height: 1; font-size: 1.8em; margin: 40px 0 10px; }
+
+.pro_list {margin-left: 240px; _float: left; _margin-left:0; font: 14px/1.5 "Microsoft Yahei"; *zoom: 1; }
+.pro_list li {position: relative; float: left; width: 273px; _width:223px; height: 305px; overflow: hidden; transition: width .5s ease; }
+.pro_list li img {display: block; width: 100%; width: 273px; height: 305px; background-color: #D6D6D6; }
+.pro_list li p {position: absolute; bottom: 0; z-index: 23; width: 95%; height: 60px; color: #fff; line-height: 28px; padding-left: 5%; background: url(http://pic.c-ctrip.com/vacation_v2/mice_v2/text_bg.png) repeat-x 0 0; _background: none; }
+.pro_list li .pro_list_tit {display: inline; height: auto; color: #fff; }
+.pro_list li .mask {position: absolute; top: 0; left: 0; bottom: 0; right: 0; height: 100%; z-index: 22; transition: all .3s ease; background: url(http://pic.c-ctrip.com/vacation_v2/mice_v2/transparent.png) no-repeat -999em -999em; }
+.pro_list li:hover .mask {background: url(http://pic.c-ctrip.com/vacation_v2/mice_v2/transparent.png) repeat\9; background: rgba(0,0,0,.4); }
+
+.pro_list .banner_tab {position: absolute; bottom: 15px; left: 0; z-index: 23; width: 100%; text-align: center; }
+.pro_list .banner_tab a {display: inline-block; *zoom: 1; float: none; }
+.pro_list .pro_l {width: 393px; _width:294px; height: 610px; text-align: center; overflow: hidden; }
+.pro_list .pro_l img {width: 393px; height: 610px; }
+.pro_list .prol_label {position: absolute; bottom: 57px; left: 50%; z-index: 99; width: 160px; text-align: center; font-size: 20px; padding: 25px 70px 20px; margin-left: -150px;
+	filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr='#ddffffff', endColorStr='#ddffffff', gradientType='0');
+	background-color: rgba(255,255,255,.9);
+	_background-color: #fff; }
+.pro_list .prol_label a {color: inherit; text-decoration: none; }
+.pro_list .prol_label strong {display: block; font-size: 1.2em; border-top: 1px solid #EE5743; padding-top: 5px; margin-top: 10px; }
+:root .pro_list .prol_label {filter: none; }
+
+/* = 各区域产品颜色调整 = */
+.mc_prod1 h3 span {color: #F6A69B; }
+.mc_prod1 dl {border-bottom-color: #EE9990; }
+.mc_prod1 .prol_label {color: #EE5743; }
+.mc_prod1 .prol_label strong {border-top-color: #EE5743; }
+.mc_prod2 h3 span {color: #769BD3; }
+.mc_prod2 dl {border-bottom-color: #859CCD; }
+.mc_prod2 .prol_label {color: #245EB9; }
+.mc_prod2 .prol_label strong {border-top-color: #245EB9; }
+.mc_prod3 h3 span {color: #A881D7; }
+.mc_prod3 dl {border-bottom-color: #9E83CD; }
+.mc_prod3 .prol_label {color: #631EB8; }
+.mc_prod3 .prol_label strong {border-top-color: #631EB8; }
+.mc_prod4 h3 span {color: #DFBD91; }
+.mc_prod4 dl {border-bottom-color: #D9BA97; }
+.mc_prod4 .prol_label {color: #B47627; }
+.mc_prod4 .prol_label strong {border-top-color: #B47627; }
+
+/* = 首页产品图片底部价格 price = */
+.mc_price {font-size: 1.5em; }
+.mc_price dfn {vertical-align: middle; font-size: .9em; padding-right: 3px; }
+
+/* = 首页底部城市推荐 = */
+.mc_city_recomm ul {overflow: hidden; *zoom: 1; }
+.mc_city_recomm li {position:relative; *zoom: 1; float: left; width: 376px; _width: 309px; margin-right: 26px; background-color: #D6D6D6; overflow: hidden; transition: width .5s ease; }
+.mc_city_recomm li img {width: 376px; height: 157px; transition: transform .5s ease; }
+.mc_city_recomm li p {height: 54px; font: 16px/54px "Microsoft Yahei"; padding: 0 13px; background-color: #fff; }
+.mc_city_recomm li .imc_recomm {float: right; margin-top: 10px; opacity: .8; filter: alpha(opacity=80); }
+.mc_city_recomm li .imc_recomm:hover {opacity: 1; filter: alpha(opacity=100); }
+.mc_city_recomm li:hover img {transform: scale(1.1); }
+.mc_city_recomm li a {color: #333; }
+.mc_city_recomm .img {display: block; height: 157px; overflow: hidden; }
+.mc_city_recomm .mask {*zoom: 1; position: absolute; top: 0; left: 0; width: 100%; height: 157px; bottom: 54px; right: 0; z-index: 98; transition: all .3s ease; background: url(http://pic.c-ctrip.com/vacation_v2/mice_v2/transparent.png) no-repeat -999em -999em\9; }
+.mc_city_recomm .mask:hover {background: url(http://pic.c-ctrip.com/vacation_v2/mice_v2/transparent.png) repeat\9; background: rgba(0,0,0,.4); _background: none; }
+.mc_city_recomm .nomargin {margin-right: 0; }
+
+/* = 尾部mice footer = */
+.mc_footer h2 {float: left; width: 240px; font: 700 26px/1.8 "Microsoft Yahei"; color: #B98748; margin-top: 10px; }
+.mc_footer ul {margin-left: 240px; overflow: hidden; }
+.mc_footer li {float: left; width: 19%; padding: 0 3%; text-align: center; line-height: 1.6; *margin-right: -1px; color: #666; font-size: 14px; font-family: "Microsoft Yahei"; }
+.mc_footer li .ft_icon {*margin-bottom: 5px; }
+.mc_footer li:hover .ft_icon {opacity: 1; filter: alpha(opacity=100); }
+.mc_footer li b {display: block; margin-bottom: 5px; font: 400 18px/1 "Microsoft Yahei"; color: #333; }
+.mc_footer .foot_logo{ font:400 28px/40px "Microsoft Yahei"; color: #CE9550;}
+.mc_footer .foot_logo .mice_logo {margin: 7px 10px 0 0; vertical-align: top; }
+.mc_footer .tailordesign {}
+
+/* = 输入框 下拉框 = */
+.drop {font: 14px/30px "Microsoft Yahei"; border: 1px solid #999; background-color: #fff; }
+.drop1 {width: 257px; padding: 15px; }
+.drop1 p {color: #999; }
+.drop1 dl {overflow: hidden; }
+.drop1 dd {float: left; padding: 0 10px; margin: 0 5px 5px 0; cursor: pointer; }
+.drop1 dd:hover {color: #fff; background-color: #CC954E; }
+.drop2 {width: 400px; padding: 15px 15px 5px; *padding-bottom: 15px; }
+.drop2 ul {overflow: hidden; }
+.drop2 li {float: left; width:122px; margin:0 10px 10px 0; cursor: pointer; }
+.drop2 li span {float: left; width: 75px; height: 28px; line-height: 28px; padding: 0 5px 0 10px; border: 1px dashed #CC954E; border-width: 1px 0 1px 1px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.drop2 li .imc_icon {float: right; margin-left: -1px; _margin-left:0; cursor: pointer; }
+.drop2 li:hover .imc_icon, .drop2 .cur .imc_icon {background-position: -97px -3px; }
+.drop3 {width: 287px; }
+.drop3 li, .drop3 p {padding-left: 10px; }
+.drop3 li:hover {color: #fff; background-color: #CB944D; cursor: pointer; }
+
+/* = 输入框 弹窗 = */
+.pop {width: 553px; font: 18px/38px "Microsoft Yahei"; padding: 20px; border: 1px solid #C2C2C2; background-color: #fff; overflow: hidden; }
+.pop h3 {color: #CD944D; font: 400 22px/2 "Microsoft Yahei"; }
+.pop h3 span {font-size: .8em; padding-left: 10px; }
+.pop table {width: 100%; }
+.pop th {font-weight: 400; text-align: right; vertical-align: top; }
+.pop .dot {border-top: 1px dotted #ccc; margin-top: 10px; padding-top: 15px; }
+.pop .cus_left, .pop .cus_right {float: left; width: 533px; _width:458px; }
+.pop .cus_right {margin-left: 20px; }
+.pop .more_need {}
+.pop .more_need .lb {float: left; width: 90px; }
+.pop .more_need .mc_select {}
+.pop .more_need p {display: block; _float:left; margin-left: 90px; *margin-left: auto; _margin-left:0; overflow: hidden; }
+.pop .more_need input {height: 30px; font: 16px/30px "Microsoft Yahei"; color: #666; border: 1px solid #C9CAC5; padding-left: 10px; background-color: #ECEDE8; }
+.pop .s_need input {width: 140px; _width:103px; }
+.pop .s_need .warn {width: 125px; _width:85px; }
+.pop .s_need .i_arr {right: 30px; }
+.pop .l_need input {width: 407px; *width: 404px; _width:330px; }
+.pop .l_need .warn {width: 392px; *width: 389px; _width: 312px; }
+.pop .s_need {float: left; width: 50%; *width: 49.5%; margin-bottom: 18px; }
+.pop .l_need {clear: both; margin-bottom: 18px; *zoom: 1; }
+.pop .mc_btn1 {display: block; margin: 0 20px 0 90px; }
+.pop .warn {display: block; margin-right: 21px; }
+.pop .error {margin-bottom: 0; }
+.pop .imc_close {float: right; }
+.pop_more {width: 1086px; _width:938px; }
+.pop_more .mc_btn1 {width: 285px; }
+.pop_status {width: 500px; _width:350px; }
+.pop_status .mc_btn1 {display: inline-block; *display: inline; *zoom: 1; width: 170px; margin: 0; }
+.pop_status .imc_icon {vertical-align: middle; margin-right: 20px; }
+.pop_status p {text-align: center; padding: 20px 0 10px; }
+
+/* = 气球侧边栏 = */
+.callback {position: fixed; _position:absolute; z-index: 23; right: 25px; top: 20%; margin-top: 0; margin-top: -270px\9; text-align: center; padding: 130px 16px 0 30px; display:none; background: url(http://pic.c-ctrip.com/vacation_v2/mice_v2/balloon.png) no-repeat; }
+.callback h3 {width: 142px; height: 45px; background-color: #DE9648; }
+.callback h3 .icallback {margin-top: 13px; }
+.callback .c1 li {width: 142px; height: 50px; font: 14px/50px "Microsoft Yahei"; background-color: #fff; cursor: pointer; }
+.callback .c1 li:hover {background-color: #FFD8A4; }
+.callback .c2 li {width: 2em; height: 2em; font: 16px/1 "Microsoft Yahei"; color: #fff; margin-top: 30px; padding: 10px; background-color: #ccc; }
+.callback .c2 li:hover {background-color: #CC954E; cursor: pointer; }
+.callback .c2 .single {line-height: 2; }
+.callback .c2 .double {line-height: 1; }
+.callback_show {opacity: 1; margin-top: -270px; }
+
+/* = icon = */
+/* - 底部服务背景图标 - */
+.ft_icon {display: inline-block; *display: inline; *zoom: 1; width: 91px; height: 91px; overflow: hidden; background: url(http://pic.c-ctrip.com/vacation_v2/mice_v2/ft_icon.png) no-repeat; opacity: .8; filter: alpha(opacity=80); }
+.ft_i1 {background-position: 0 0; }
+.ft_i2 {background-position: -90px 0; }
+.ft_i3 {background-position: -182px 0; }
+.ft_i4 {background-position: -274px 0; }
+/* - 小三角 - */
+.i_arr {display: inline-block; *zoom: 1; overflow: hidden; width: 0; height: 0; border: 6px dashed transparent; }
+.i_arr_up {border-bottom: 6px solid #8F908D; }
+.i_arr_down {border-top: 6px solid #8F908D; }
+.i_arr_left {border-right: 6px solid #CB944D; }
+/* - 公共图标 - */
+.imc_icon {display: inline-block; *zoom: 1; overflow: hidden; background: url(http://pic.c-ctrip.com/vacation_v2/mice_v2/mc_icon.png) no-repeat; }
+.imc_hotnum {width: 17px; height: 21px; background-position: -3px -3px; }
+.imc_check {width: 30px; height: 30px; background-position: -65px -3px; }
+.imc_checked {width: 30px; height: 30px; background-position: -97px -3px; }
+.imc_info {width: 12px; height: 12px; background-position: -164px -3px; }
+.imc_recomm {width: 35px; height: 35px; background-position: -22px -3px; }
+.imc_locate {width: 16px; height: 21px; background-position: -178px -3px; }
+.imc_calender {width: 15px; height: 16px; background-position: -196px -3px; }
+.imc_backtop {width: 25px; height: 30px; background-position: -247px -3px; }
+.imc_close {width: 35px; height: 33px; background-position: -128px -3px; }
+.imc_close:hover {background-position: -162px -76px;}
+.imc_succ {width: 48px; height: 48px; background-position: -198px -76px; }
+.imc_fail {width: 48px; height: 48px; background-position: -248px -76px; }
+.imc_loading {width: 60px; height: 60px; background: url(http://pic.c-ctrip.com/vacation_v2/mice_v2/loading_50.gif) no-repeat; }
+.imc_ty1, .imc_ty2, .imc_ty3, .imc_ty4, .imc_ty5, .imc_ty6, .imc_ty7, .imc_ty8, .imc_ty9 {width: 33px; height: 34px; margin-right: 14px; margin-top: 15px; _margin-right:10px; transition: margin .5s ease; }
+.imc_ty1 {background-position: -3px -40px; }
+.imc_ty2 {background-position: -38px -40px; }
+.imc_ty3 {background-position: -73px -40px; }
+.imc_ty4 {background-position: -108px -40px; }
+.imc_ty5 {background-position: -143px -40px; }
+.imc_ty6 {background-position: -178px -40px; }
+.imc_ty7 {background-position: -213px -40px; }
+.imc_ty8 {background-position: -248px -40px; }
+.imc_ty9 {background-position: -213px -4px; }
+.imc_rt1, .imc_rt2, .imc_rt3, .imc_rt4 {width: 38px; height: 38px; }
+.imc_rt1 {background-position: -3px -76px; }
+.imc_rt2 {background-position: -43px -76px; }
+.imc_rt3 {background-position: -83px -76px; }
+.imc_rt4 {background-position: -123px -76px; }
+/* - 星级 - */
+.istar {display: inline-block; *zoom: 1; height: 13px; overflow: hidden; font-size: 0; line-height: 0; background: url(http://pic.c-ctrip.com/vacation_v2/mice_v2/star.png) no-repeat; }
+.star1 {width: 13px; }
+.star2 {width: 31px; }
+.star3 {width: 49px; }
+.star4 {width: 67px; }
+.star5 {width: 83px; }
+
+/* = font字体采用图片形式实现 = */
+.itext {display: inline-block; *display: inline; *zoom: 1; overflow: hidden; background: url(http://pic.c-ctrip.com/vacation_v2/mice_v2/text20150204.png) no-repeat; }
+.mice_logo {width: 96px; height: 29px; background-position: 0 0; }
+.tailordesign {width: 162px; height: 35px; background-position: 0 -30px; }
+.icallback {width: 121px; height: 20px; background-position: 0 -66px; }
+
+/* = btn = */
+.mc_btn1 {display: inline-block; font: 700 16px/38px "Microsoft Yahei"; text-align: center; color: #fff; border: 0 none; border-bottom: 2px solid #AE7225; background-color: #CC954E; cursor: pointer; overflow: hidden; outline: none; }
+.mc_btn1:hover {text-decoration: none; background-color: #AC7123; }
+
+/*
+ * detail 详情页
+ */
+.detail_bd {background-color: #F4F8FB; }
+/* = 产品预订窗 = */
+.d_prod {padding: 20px 15px; margin-bottom: 30px; background-color: #fff; overflow: hidden; }
+.d_prod .d_prod_cont {overflow: hidden; margin-left: 545px; _margin-left:498px; transition: margin .5s ease; }
+.d_prod .img {float: left; width: 500px; _width:453px; height: 386px; overflow: hidden; transition: width .5s ease; }
+.d_prod h2 {font: 700 24px/1.5 "Microsoft Yahei"; color: #b17629; margin-bottom: 10px; }
+.d_prod p {font: 12px/1.5 "Microsoft Yahei"; color: #333; }
+.d_prod .p1 {font-size: 22px; }
+.d_prod .p1 .imc_icon {margin-right: 12px; vertical-align: middle; }
+.d_prod .p1 .imc_calender {margin-left: 2px; }
+.d_prod .p2 {line-height: 2; margin-top: 5px; }
+.d_prod .p2 .i_arr {border-width: 4px; }
+.d_prod .p2 .i_arr_down {vertical-align: middle; }
+.d_prod .p2 .i_arr_up {vertical-align: 3px; }
+.d_prod .p2 a {color: #333; }
+.d_prod .p3 {font-size: 20px; }
+.d_prod .p3 .price {color: #FF9913; font-size: 42px; }
+.d_prod .p3 dfn {vertical-align: .8em; font-size: .5em; }
+.d_prod .mc_btn1 {width: 225px; }
+.d_prod .d_price_box {margin: 10px 0 20px; }
+
+/* = 路线区域块 = */
+.d_route {overflow: hidden; margin-bottom: 20px; background-color: #fff; *zoom: 1; }
+/* = 侧边栏第1天，第2天 = */
+.route_side {float: left; width: 204px; _width:120px; text-align: center; background-color: #E8E8E8; margin-bottom: -9999px; padding-bottom: 9999px; transition: width .5s ease; }
+.route_side h3 {color: #CC954E; font: 700 24px/1.5 "Microsoft Yahei"; margin: 20px 0 30px; }
+.route_side h3 span {display: block; font-size: .6em; font-weight: 400; }
+.route_side ul {display: inline-block; _display: block; width: 48px; margin-right: 49px; border-right: 3px solid #D6D6D6; margin-bottom: 20px; _width: 80px; _margin-right: 0; _border-right: 0; }
+.route_side li {width: 100px; font: 18px/2.5 "Microsoft Yahei"; border-radius: 20px; margin-bottom: 25px; background-color: #fff; cursor: pointer; }
+.route_side .cur, .route_side li:hover {color: #fff; background-color: #CC954E; }
+.route_side .nomargin {margin-bottom: 0; }
+
+.route_li {padding: 24px 45px 24px 24px; overflow: hidden; margin-left: 204px; _margin-left: 120px; }
+
+/* = 三列图片 = */
+.rt_special {}
+.rt_special li {position: relative; float: left; width: 255px; _width:200px; margin-right: 24px; overflow: hidden; transition: width .5s ease; }
+.rt_special img {display: block; }
+.rt_special p {position: absolute; bottom: 0; _bottom:-1px; width: 98%; height: 30px; font: 14px/30px "Microsoft Yahei"; color: #fff; margin-top: -30px; padding-left: 2%; background: url(http://pic.c-ctrip.com/vacation_v2/mice_v2/text_bg2.png) repeat-x 0 0; }
+.rt_special .nomargin {margin-right: 0; }
+
+/* = 当日酒店 = */
+.rt_htl {float: left; overflow: hidden; width: 533px; }
+.rt_htl li {float: left; }
+.rt_htl li img {display: block; }
+.rt_htl .s {position: relative; margin-left: 13px; margin-bottom: 15px; }
+.rt_htl .l {_width:360px; overflow: hidden; }
+.rt_htl .l img {width: 400px; height: 300px; }
+.rt_htl .s img {width: 120px; height: 90px; }
+.rt_htl .s .mask {position: absolute; top: 0; bottom: 0; left: 0; right: 0; z-index: 1; background: url(http://pic.c-ctrip.com/vacation_v2/mice_v2/text20150204.png) no-repeat -999em -999em; }
+.rt_htl .s .mask:hover, .rt_htl .cur .mask {border: 5px solid #DE9648; }
+.rt_htl_cont {overflow: hidden; padding: 0 20px; font: 24px/1.5 "Microsoft Yahei"; }
+.rt_htl_cont h4 {font-weight: 700; font-family: "Microsoft Yahei"; margin-bottom: 5px; }
+.rt_htl_cont p {color: #666; font-size: 14px; margin-bottom: 20px; }
+
+/* = 路线行程区域列表 = */
+.rt_box {overflow: hidden; padding-bottom: 40px; padding-left: 60px; border-bottom: 1px solid #DFDFDF; margin-bottom: 25px; }
+.rt_box h3 {font: 700 22px/38px "Microsoft Yahei"; margin-bottom: 26px; }
+.rt_box h3 span {font-weight: 400; }
+.rt_box h3 .imc_icon {float: left; margin-left: -60px; }
+.rt_box .border_side_r {margin-left: -26px; }
+.rt_box .border_side_r .days {position: relative; float: left; width: 67px; height: 28px; color: #fff; text-align: center; border-radius: 15px; margin-left: -90px; background-color: #DE9648; }
+.rt_box .rt_txt {font: 14px/28px "Microsoft Yahei"; padding: 0 0 36px 55px; border-left: 1px dotted #CFCFCF; }
+.rt_box .nb {border-left-color: #fff; }
+
+/* = 各种服务和须知 = */
+.rt_tab_other {font: 14px/1.5 "Microsoft Yahei"; *zoom: 1; }
+.rt_tab_other .tab {position: relative; float: left; margin-bottom: -1px; right: -1px; background-color: #FBFBFB; }
+.rt_tab_other .tab li {position: relative; float: left; margin-left: -1px; }
+.rt_tab_other .tab a {float: left; line-height: 38px; color: #333; border: 1px solid #EAEAEA; padding: 0 20px; }
+.rt_tab_other .tab a:hover {text-decoration: none; }
+.rt_tab_other .tab .cur {}
+.rt_tab_other .tab .cur a {border-top: 2px solid #DE9648; border-bottom: 0; background-color: #fff; }
+.rt_tab_other .cont {padding: 20px; background-color: #fff; clear: both; border: 1px solid #EAEAEA; }
+.rt_tab_other ol li {list-style-type: decimal; margin-left: 2em; }
+
+/* = hover大图 = */
+.b_img {position: absolute; padding: 3px; border: 1px solid #aaa; }
+.b_img img {display: block; }
+
+@media screen and (max-width: 980px) {
+	/*head*/
+	.cui_hd_cont {width: 980px; }
+	#cui_nav {width: 980px; }
+	/*body*/
+	.base_hd {width: 980px; }
+	.base_hd .ad {width: 410px; }
+	.base_bd .main {width: 980px; }
+	.hot_deals .img_lbl_box {width: 630px; }
+	.pro_list li {width: 223px; }
+	.pro_list .pro_l {width: 293px; }
+	.mc_city_recomm li {width: 309px; }
+	.base_ft .mc_footer {width: 980px; }
+	/*pop*/
+	.pop {width: 458px; }
+	.pop_more {width: 938px; }
+	.pop .cus_left, .pop .cus_right {width: 458px; }
+	.pop .s_need input {width: 105px; }
+	.pop .l_need input {width: 334px; }
+	.pop .s_need .warn {width: 90px; }
+	.pop .l_need .warn {width: 319px; }
+	/* = detail 详情页 = */
+	.imc_ty1, .imc_ty2, .imc_ty3, .imc_ty4, .imc_ty5, .imc_ty6, .imc_ty7, .imc_ty8, .imc_ty9 {margin-right: 8px; }
+	.d_prod .img {width: 453px; }
+	.d_prod .d_prod_cont {margin-left: 498px; }
+	.route_side {width: 120px; }
+	.rt_special li {width: 199px; }
+	.rt_htl {width: 493px; }
+	.rt_htl .l {width: 360px; }
+	/* = 侧边栏返回头部 = */
+	.callback {opacity: 0; margin-top: 0; }
+}

@@ -1,0 +1,24 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="js/sea.js"></script>
+<script src="js/cQuery.js"></script>
+<script src="js/jQuery.js"></script>
+<script src="js/demand.js"></script>
+<script>
+	 
+	 seajs.config({
+	 	base:'./',
+	 	path:{
+	 		js:'js'
+	 	}
+	 });
+	 
+ 	 seajs.use('js/demandModule',function(demand){
+ 		demand.show();
+
+         jQuery("#test").click(function(){
+             demand.show();
+         });
+ 	 });
+	 
+</script>
+<input id="test" value="test" type="button">
